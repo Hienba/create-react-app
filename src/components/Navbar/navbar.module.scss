@@ -1,0 +1,143 @@
+.wrapper-active {
+  display: block;
+
+  & .nav-menu {
+    right: 0;
+  }
+  & .container span:nth-child(3) {
+    transform: translateX(60px);
+  }
+  & .container span:nth-child(1) {
+    width: 40px;
+    transform: translateY(0px) rotate(45deg);
+  }
+  & .container span:nth-child(2) {
+    width: 40px;
+    transform: translateY(0px) rotate(315deg);
+  }
+  & .content {
+    opacity: 0.1;
+  }
+}
+.nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #c3c3c3;
+
+  &-logo {
+    color: black;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 600;
+  }
+  &-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  &-items {
+    margin: 0 1px;
+  }
+  &-links {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    &:hover {
+      color: black;
+    }
+  }
+}
+.container {
+  display: none;
+
+  span {
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background: blue;
+    transition: all 0.3s ease;
+    &:nth-child(1) {
+      transform: translateY(-15px);
+      width: 40px;
+      left: 0px;
+    }
+    &:nth-child(2) {
+      transform: translateY(15px);
+      width: 40px;
+      left: 0px;
+    }
+  }
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 800;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .container {
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+  .nav {
+    padding: 0 40px 0 50px;
+    &-menu {
+      position: fixed;
+      top: 80px;
+      box-shadow: rgba(0, 0, 0, 0.1) -5px 0px 5px 0px;
+      right: -100%;
+      background: #ffffff;
+      height: 100vh;
+      width: 70%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    &-items {
+      width: 100%;
+      padding: 15px;
+      border-bottom: 1px solid #c3c3c3;
+    }
+    &-links {
+      width: 100%;
+      margin-right: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    &-links:hover {
+      color: cyan;
+    }
+  }
+}
