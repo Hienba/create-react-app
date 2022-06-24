@@ -7,7 +7,7 @@ const Navbar = () => {
   const cx = className.bind(styles);
   const [click, setClick] = useState(false);
   const handleClick = () => {
-    handleClick ? setClick(false) : setClick(true);
+    setClick(!click);
   };
   return (
     <div className={cx(click ? "wrapper-active" : "wrapper")}>
