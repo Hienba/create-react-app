@@ -1,3 +1,5 @@
+@import "/src/assets/Sass/variable";
+@import "/src/assets/Sass/mixin";
 .wrapper-active {
   display: block;
 
@@ -37,12 +39,28 @@
     font-weight: 600;
   }
   &-menu {
-    display: flex;
     flex-wrap: wrap;
     list-style: none;
   }
+  &-auth {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    &-links {
+      color: blue;
+      margin: 0 2px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+  }
   &-items {
-    margin: 0 1px;
+    margin: 0 2px;
   }
   &-links {
     color: #f2f2f2;
@@ -65,7 +83,7 @@
     position: absolute;
     width: 40px;
     height: 5px;
-    background: blue;
+    background-color: blue;
     transition: all 0.3s ease;
     &:nth-child(1) {
       transform: translateY(-15px);
@@ -92,7 +110,6 @@
   padding: 0 30px;
   color: #1b1b1b;
 }
-
 @media screen and (max-width: 1000px) {
   .nav {
     padding: 0 40px 0 50px;
@@ -124,9 +141,19 @@
       display: block;
       transition: all 0.3s ease;
     }
-    &-items {
+    &-auth {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    &-auth-items {
       width: 100%;
       padding: 15px;
+      border-bottom: 1px solid #c3c3c3;
+    }
+    &-items {
+      width: 100%;
+      padding: 10px;
       border-bottom: 1px solid #c3c3c3;
     }
     &-links {

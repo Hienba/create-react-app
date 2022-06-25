@@ -51,16 +51,18 @@ const Navbar = () => {
               Feedback
             </Link>
           </li>
-          <li className={cx("nav-items")}>
-            <Link className={cx("nav-links")} to="/">
-              Signin
-            </Link>
-          </li>
-          <li className={cx("nav-items")}>
-            <Link className={cx("nav-links")} to="/">
-              Signup
-            </Link>
-          </li>
+          <div className={cx("nav-auth")}>
+            <li className={cx("nav-auth-items")}>
+              <Link className={cx("nav-auth-links")} to="/">
+                Signin
+              </Link>
+            </li>
+            <li className={cx("nav-auth-items")}>
+              <Link className={cx("nav-auth-links")} to="/">
+                Signup
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
       <div className={cx("content")}>
